@@ -250,8 +250,11 @@
 
                         <!-- Quick Service Pills -->
                         <div class="flex flex-wrap justify-center lg:justify-start gap-2 pt-1">
+                            <div class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-300 border border-emerald-500/20 hover:bg-emerald-500/20 transition flex items-center gap-1.5"
                                 <i data-lucide="heart-pulse" class="w-3.5 h-3.5"></i> Remote Patient Monitoring
-                            </button>
+                            </button
+                                <div class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-300 border border-emerald-500/20 hover:bg-emerald-500/20 transition flex items-center gap-1.5">
+                            
                                 <i data-lucide="stethoscope" class="w-3.5 h-3.5"></i> Chronic Care Management
                             </button>
                             <button onclick="openServiceModal('software')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-300 border border-brand-500/20 hover:bg-brand-500/20 transition flex items-center gap-1.5">
@@ -892,8 +895,8 @@
                 <div>
                     <h4 class="font-display font-bold text-sm uppercase tracking-wider mb-3">Our Services</h4>
                     <ul class="space-y-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                        <li><button onclick="openServiceModal('rpm')" class="hover:text-brand-500 transition">Remote Patient Monitoring</button></li>
-                        <li><button onclick="openServiceModal('ccm')" class="hover:text-brand-500 transition">Chronic Care Management</button></li>
+                        <li><button class="hover:text-brand-500 transition">Remote Patient Monitoring</button></li>
+                        <li><button class="hover:text-brand-500 transition">Chronic Care Management</button></li>
                         <li><button onclick="openServiceModal('software')" class="hover:text-brand-500 transition">Software Development</button></li>
                         <li><button onclick="openServiceModal('web')" class="hover:text-brand-500 transition">Web Development</button></li>
                         <li><button onclick="openServiceModal('app')" class="hover:text-brand-500 transition">App Development</button></li>
