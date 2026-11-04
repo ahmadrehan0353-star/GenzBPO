@@ -423,6 +423,45 @@
         <!-- ==========================================
              SERVICES SECTION (services.html upgrade)
              ========================================== -->
+
+        <section id="services" class="page-section py-20 border-t border-slate-200/60 dark:border-slate-800/80 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header & Filter Tabs -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 dark:text-brand-400 text-xs font-bold uppercase tracking-wider mb-3">
+                            End-to-End Capabilities
+                        </div>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight">
+                            Our 6 Core Enterprise Services
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+                            Whether you are a medical practice scaling patient care or a business building custom digital products and remote teams, GenzBPO delivers turnkey execution.
+                        </p>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="inline-flex p-1.5 rounded-2xl bg-slate-200/70 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800 self-start">
+                        <button onclick="filterServices('all')" id="filter-all" class="service-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow transition">
+                            All Services (6)
+                        </button>
+                        <button onclick="filterServices('healthcare')" id="filter-healthcare" class="service-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+                            Healthcare BPO (2)
+                        </button>
+                        <button onclick="filterServices('tech')" id="filter-tech" class="service-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+                            Engineering & HR (4)
+                        </button>
+                    </div>
+                </div>
+                    <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Populated dynamically via JS for clean interactivity -->
+                </div>
+                <!-- 6 Services Interactive Grid -->
+                
+            </div>
+        </section>
+
                 <!-- ==========================================
              FLAGSHIP PRODUCTS SECTION (products.html upgrade)
              ========================================== -->
