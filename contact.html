@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | GenzBPO — Schedule a Consultation or Product Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-contact">
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">G</span>
+        <span>Genz<span class="gradient-text">BPO</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="products.html" class="nav-link">Our Products</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://genzhours.com" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GenzHours ↗</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" /></svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Let's Build &amp; Scale Together</span>
+        <h1 class="section-title">Start Your Project or <span class="gradient-text">Book a Live Demo</span></h1>
+        <p class="section-subtitle">Connect with our healthcare clinical directors or software engineering leads for a custom roadmap.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="info-card">
+            <div class="info-icon">🩺</div>
+            <div>
+              <h4>Healthcare RPM &amp; CCM</h4>
+              <p style="color: var(--text-muted); font-size: 0.92rem;">Turnkey clinical monitoring and RPMatrix onboarding for medical practices.</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">💻</div>
+            <div>
+              <h4>Software, Web &amp; App Engineering</h4>
+              <p style="color: var(--text-muted); font-size: 0.92rem;">Dedicated full-stack developers for custom SaaS, web portals, and mobile apps.</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">⏱️</div>
+            <div>
+              <h4>Remote HR &amp; Genzhours</h4>
+              <p style="color: var(--text-muted); font-size: 0.92rem;">Scale pre-vetted remote staff tracked transparently via <a href="https://genzhours.com" target="_blank" rel="noopener" style="color: #60a5fa;">genzhours.com</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Request a Consultation</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Dr. John Doe / Jane Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="name@company.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" />
+              </div>
+              <div class="form-group">
+                <label for="serviceInterest">Service or Product of Interest *</label>
+                <select id="serviceInterest" name="serviceInterest" class="form-control" required>
+                  <option value="Remote Patient Monitoring (RPM)">Remote Patient Monitoring (RPM)</option>
+                  <option value="Chronic Care Management (CCM)">Chronic Care Management (CCM)</option>
+                  <option value="Software Development">Software Development</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="App Development">App Development</option>
+                  <option value="Remote HR">Remote HR</option>
+                  <option value="RPMatrix Product Demo">Product: RPMatrix</option>
+                  <option value="Genzhours (genzhours.com) Demo">Product: Genzhours (genzhours.com)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details or Clinic Size</label>
+              <textarea id="message" name="message" rows="4" class="form-control" placeholder="Tell us about your patient volume, software requirements, or remote hiring goals..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry →</button>
+
+            <div id="formStatus" style="display: none; margin-top: 1.25rem; padding: 1rem; border-radius: 10px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.92rem;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-contact-links" aria-label="Company contact and social links">
+        <a href="mailto:info@genzbpo.com">info@genzbpo.com</a>
+        <a href="https://genzbpo.com" target="_blank" rel="noopener noreferrer">genzbpo.com ↗</a>
+        <a href="https://www.linkedin.com/company/genz-bpo/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://www.instagram.com/genzbpo/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a href="https://wa.me/13213262106" target="_blank" rel="noopener noreferrer">WhatsApp +1 321-326-2106</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GenzBPO. All rights reserved.</span>
+        <a href="https://genzhours.com" target="_blank" rel="noopener noreferrer" style="color: #60a5fa;">genzhours.com ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/13213262106" target="_blank" rel="noopener noreferrer" aria-label="Chat with GenzBPO on WhatsApp at +1 321-326-2106" title="WhatsApp +1 321-326-2106">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.44-9.886 9.893-9.886a9.82 9.82 0 016.99 2.896 9.82 9.82 0 012.892 6.997c-.003 5.45-4.44 9.887-9.891 9.887m8.41-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.3-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.479-8.413Z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
