@@ -3,25 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GenzBPO | Remote Patient Monitoring, Chronic Care, Software & Remote HR</title>
-  <meta name="description" content="GenzBPO delivers HIPAA-compliant Remote Patient Monitoring (RPM), Chronic Care Management (CCM), Custom Software, Web & App Development, Remote HR, and flagship SaaS products Rpmatrix & Genzhours." />
+  <title>GenzBPO | Remote Patient Monitoring, Chronic Care, Software &amp; Remote HR</title>
+  <meta name="description" content="GenzBPO delivers HIPAA-compliant Remote Patient Monitoring (RPM), Chronic Care Management (CCM), Custom Software, Web &amp; App Development, Remote HR, and flagship SaaS products Rpmatrix &amp; Genzhours." />
+  <meta property="og:image" content="og-image.png" />
+  <meta name="theme-color" content="#0a3f3d" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="styles.css" />
+  <script>try{if(localStorage.getItem('genzbpo-theme')==='dark')document.documentElement.classList.add('pre-dark')}catch(e){}</script>
 </head>
 <body class="home">
+  <script>if(document.documentElement.classList.contains('pre-dark'))document.body.classList.add('dark-mode')</script>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header Navigation -->
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <img src="logo.png" alt="GenzBPO" class="brand-logo-img brand-logo-light" />
-        <img src="logo-dark.png" alt="" aria-hidden="true" class="brand-logo-img brand-logo-dark" />
+      <a href="index.html" class="logo" aria-label="GenzBPO home">
+        <img src="logo.png" alt="GenzBPO" class="brand-logo-img brand-logo-light" width="112" height="51" />
+        <img src="logo-dark.png" alt="" aria-hidden="true" class="brand-logo-img brand-logo-dark" width="112" height="51" />
       </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html" class="nav-link active">Home</a>
+      <nav class="nav-links" id="navLinks" aria-label="Main">
+        <a href="index.html" class="nav-link active" aria-current="page">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="products.html" class="nav-link">Our Products</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-drawer-cta">Book Discovery Call</a>
       </nav>
 
       <div class="nav-actions">
@@ -34,366 +45,299 @@
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" /></svg>
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
       </button>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span class="bar"></span></button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="badge">
-          <span class="badge-dot"></span>
-          Healthcare Clinical BPO • Custom Engineering • Remote HR
-        </div>
-        <h1 class="hero-title">
-          Scaling Healthcare Care Delivery &amp; <span class="gradient-text">Digital Engineering</span>
-        </h1>
-        <p class="hero-desc">
-          We empower medical practices and high-growth enterprises with turnkey <strong>Remote Patient Monitoring (RPM)</strong>, <strong>Chronic Care Management (CCM)</strong>, full-stack <strong>Software, Web &amp; App Development</strong>, and <strong>Remote HR</strong>—powered by our flagship platforms <strong>Rpmatrix</strong> and <strong>Genzhours</strong>.
-        </p>
-        <div class="hero-buttons">
-          <a href="services.html" class="btn btn-primary">Explore All 6 Services →</a>
-          <a href="contact.html?interest=rpmatrix" class="btn btn-teal">Request RPMatrix Information</a>
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <ul class="hero-tags" aria-label="What we do">
+            <li>Healthcare Clinical BPO</li>
+            <li>Custom Engineering</li>
+            <li>Remote HR</li>
+          </ul>
+          <h1 class="hero-title">Scaling Healthcare Care Delivery &amp; Digital Engineering</h1>
+          <p class="hero-desc">
+            We empower medical practices and high-growth enterprises with turnkey <strong>Remote Patient Monitoring (RPM)</strong>, <strong>Chronic Care Management (CCM)</strong>, full-stack <strong>Software, Web &amp; App Development</strong>, and <strong>Remote HR</strong>, powered by our flagship platforms <strong>Rpmatrix</strong> and <strong>Genzhours</strong>.
+          </p>
+          <div class="hero-buttons">
+            <a href="services.html" class="btn btn-primary">Explore All 6 Services</a>
+            <a href="contact.html?interest=rpmatrix" class="btn btn-outline">Request RPMatrix Information</a>
+          </div>
+
+          <dl class="hero-stats">
+            <div class="stat-box"><dt>RPM &amp; CCM Audit Compliance</dt><dd>99.4%</dd></div>
+            <div class="stat-box"><dt>Operational &amp; HR Cost Savings</dt><dd>60%</dd></div>
+            <div class="stat-box"><dt>Clinical &amp; Engineering Coverage</dt><dd>24/7</dd></div>
+          </dl>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat-box">
-            <h3>99.4%</h3>
-            <p>RPM &amp; CCM Audit Compliance</p>
-          </div>
-          <div class="stat-box">
-            <h3>60%</h3>
-            <p>Operational &amp; HR Cost Savings</p>
-          </div>
-          <div class="stat-box">
-            <h3>24/7</h3>
-            <p>Clinical &amp; Engineering Coverage</p>
-          </div>
-        </div>
-      </div>
+        <div class="monitor" role="group" aria-label="GenzBPO live ecosystem">
+          <div class="monitor-head"><span class="live-dot" aria-hidden="true"></span>GenzBPO live ecosystem</div>
+          <div class="trace" aria-hidden="true"><svg viewBox="0 0 600 92" preserveAspectRatio="none"><line class="grid-line" x1="0" y1="0" x2="0" y2="92"/><line class="grid-line" x1="50" y1="0" x2="50" y2="92"/><line class="grid-line" x1="100" y1="0" x2="100" y2="92"/><line class="grid-line" x1="150" y1="0" x2="150" y2="92"/><line class="grid-line" x1="200" y1="0" x2="200" y2="92"/><line class="grid-line" x1="250" y1="0" x2="250" y2="92"/><line class="grid-line" x1="300" y1="0" x2="300" y2="92"/><line class="grid-line" x1="350" y1="0" x2="350" y2="92"/><line class="grid-line" x1="400" y1="0" x2="400" y2="92"/><line class="grid-line" x1="450" y1="0" x2="450" y2="92"/><line class="grid-line" x1="500" y1="0" x2="500" y2="92"/><line class="grid-line" x1="550" y1="0" x2="550" y2="92"/><line class="grid-line" x1="600" y1="0" x2="600" y2="92"/><line class="grid-line" x1="0" y1="23" x2="600" y2="23"/><line class="grid-line" x1="0" y1="46" x2="600" y2="46"/><line class="grid-line" x1="0" y1="69" x2="600" y2="69"/><path class="ecg" pathLength="1" vector-effect="non-scaling-stroke" d="M0 58 H38 q6 -9 12 0 H66 l5 8 l9 -50 l9 64 l6 -22 H108 q9 -14 18 0 H150 H188 q6 -9 12 0 H216 l5 8 l9 -50 l9 64 l6 -22 H258 q9 -14 18 0 H300 H338 q6 -9 12 0 H366 l5 8 l9 -50 l9 64 l6 -22 H408 q9 -14 18 0 H450 H488 q6 -9 12 0 H516 l5 8 l9 -50 l9 64 l6 -22 H558 q9 -14 18 0 H600"/></svg></div>
 
-      <!-- Live Command Preview Card -->
-      <div class="hero-visual">
-        <div class="visual-header">
-          <div class="window-dots">
-            <span class="dot-red"></span>
-            <span class="dot-yellow"></span>
-            <span class="dot-green"></span>
+          <div class="monitor-row">
+            <div class="monitor-row-top">
+              <strong><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>RPMatrix Clinical Telemetry</strong>
+              <span class="metric-pill">CPT 99454 / 99457 Ready</span>
+            </div>
+            <p>Real-time patient vitals monitoring, automated 16-day device compliance &amp; CCM care coordination.</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 94%;"></div></div>
           </div>
-          <span style="font-size: 0.8rem; color: var(--text-muted); font-family: monospace;">GENZBPO LIVE ECOSYSTEM</span>
-        </div>
 
-        <div class="visual-card">
-          <div class="visual-card-top">
-            <strong>🩺 RPMatrix Clinical Telemetry</strong>
-            <span class="metric-pill">CPT 99454 / 99457 Ready</span>
+          <div class="monitor-row">
+            <div class="monitor-row-top">
+              <strong><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>Genzhours.com Workforce Intelligence</strong>
+              <span class="metric-pill">98.2% Productivity</span>
+            </div>
+            <p>Automated remote employee time-tracking, shift attendance, proof-of-work &amp; payroll insights.</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 89%;"></div></div>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Real-time patient vitals monitoring, automated 16-day device compliance &amp; CCM care coordination.</p>
-          <div class="progress-bar"><div class="progress-fill" style="width: 94%;"></div></div>
-        </div>
 
-        <div class="visual-card">
-          <div class="visual-card-top">
-            <strong>⏱️ Genzhours.com Workforce Intelligence</strong>
-            <span class="metric-pill">98.2% Productivity</span>
+          <div class="monitor-row">
+            <div class="monitor-row-top">
+              <strong><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19.5h20"/></svg>Full-Stack Software, Web &amp; Mobile Squads</strong>
+              <span class="metric-pill">Agile CI/CD</span>
+            </div>
+            <p>Dedicated engineers building custom SaaS, healthcare portals, and iOS/Android mobile apps.</p>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Automated remote employee time-tracking, shift attendance, proof-of-work &amp; payroll insights.</p>
-          <div class="progress-bar"><div class="progress-fill" style="width: 89%;"></div></div>
-        </div>
-
-        <div class="visual-card" style="margin-bottom: 0;">
-          <div class="visual-card-top">
-            <strong>💻 Full-Stack Software, Web &amp; Mobile Squads</strong>
-            <span class="metric-pill">Agile CI/CD</span>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Dedicated engineers building custom SaaS, healthcare portals, and iOS/Android mobile apps.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 6 Core Services Section -->
-  <section class="section bg-alt" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Our 6 Core Specializations</span>
-        <h2 class="section-title">Comprehensive Solutions Under <span class="gradient-text">One Roof</span></h2>
-        <p class="section-subtitle">Filter by vertical or click any service card for an interactive breakdown of workflows, compliance, and deliverables.</p>
+    <section class="section bg-mist" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Our 6 Core Specializations</span>
+            <h2 class="section-title">Comprehensive Solutions Under One Roof</h2>
+          </div>
+          <p class="section-subtitle">Filter by vertical or click any service card for an interactive breakdown of workflows, compliance, and deliverables.</p>
+        </div>
+
+        <div class="filter-tabs" role="group" aria-label="Filter services">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All 6 Services</button>
+          <button class="filter-btn" type="button" data-filter="healthcare" aria-pressed="false">Healthcare BPO (RPM &amp; CCM)</button>
+          <button class="filter-btn" type="button" data-filter="engineering" aria-pressed="false">Software, Web, App &amp; Remote HR</button>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card" data-category="healthcare">
+            <div>
+              <div class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></div>
+              <span class="service-cat">Healthcare Clinical</span>
+              <h3>Remote Patient Monitoring</h3>
+              <p>Turnkey cellular vitals tracking (BP, glucose, SpO2, weight) with 24/7 clinical triage and full Medicare reimbursement capture.</p>
+              <ul class="feature-list">
+                <li>CPT 99453, 99454, 99457 &amp; 99458 compliant</li>
+                <li>Powered by RPMatrix</li>
+                <li>Automated 16-day transmission tracking</li>
+              </ul>
+            </div>
+            <button class="text-link" type="button" data-service-modal="rpm">View Clinical Workflow</button>
+          </article>
+          <article class="service-card" data-category="healthcare">
+            <div>
+              <div class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg></div>
+              <span class="service-cat">Healthcare Clinical</span>
+              <h3>Chronic Care Management</h3>
+              <p>Proactive monthly care coordination for patients with 2+ chronic conditions to improve outcomes and recurring practice revenue.</p>
+              <ul class="feature-list">
+                <li>CPT 99490, 99439 &amp; 99487 billing capture</li>
+                <li>Personalized care plans &amp; med adherence</li>
+                <li>Reduces ER visits &amp; hospital readmissions</li>
+              </ul>
+            </div>
+            <button class="text-link" type="button" data-service-modal="ccm">View CCM Protocol</button>
+          </article>
+          <article class="service-card" data-category="engineering">
+            <div>
+              <div class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></div>
+              <span class="service-cat">Enterprise Tech</span>
+              <h3>Software Development</h3>
+              <p>Custom enterprise software, HIPAA-compliant healthcare backends, microservices, and AI-driven business automation platforms.</p>
+              <ul class="feature-list">
+                <li>Python, Django, Node.js &amp; PostgreSQL</li>
+                <li>HL7 / FHIR EHR integrations &amp; APIs</li>
+                <li>Cloud-native Docker &amp; AWS architecture</li>
+              </ul>
+            </div>
+            <button class="text-link" type="button" data-service-modal="software">Explore Architecture</button>
+          </article>
+          <article class="service-card" data-category="engineering">
+            <div>
+              <div class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></svg></div>
+              <span class="service-cat">Full-Stack Web</span>
+              <h3>Web Development</h3>
+              <p>High-converting corporate websites, SaaS dashboards, e-commerce platforms, and responsive progressive web apps.</p>
+              <ul class="feature-list">
+                <li>React, Next.js &amp; Tailwind CSS experts</li>
+                <li>Lightning-fast Core Web Vitals &amp; SEO</li>
+                <li>Secure role-based client portals</li>
+              </ul>
+            </div>
+            <button class="text-link" type="button" data-service-modal="web">Explore Web Stack</button>
+          </article>
+          <article class="service-card" data-category="engineering">
+            <div>
+              <div class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></div>
+              <span class="service-cat">Mobile iOS &amp; Android</span>
+              <h3>App Development</h3>
+              <p>Sleek, high-performance iOS and Android mobile apps for telehealth, connected medical devices, and consumer platforms.</p>
+              <ul class="feature-list">
+                <li>React Native &amp; Flutter development</li>
+                <li>Bluetooth (BLE) medical device sync</li>
+                <li>End-to-end App Store &amp; Play deployment</li>
+              </ul>
+            </div>
+            <button class="text-link" type="button" data-service-modal="app">Explore Mobile Apps</button>
+          </article>
+          <article class="service-card" data-category="engineering">
+            <div>
+              <div class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 4.8a3.2 3.2 0 0 1 0 6.3M21 20c0-2.7-1.6-5-3.9-5.8"/></svg></div>
+              <span class="service-cat">Workforce Solutions</span>
+              <h3>Remote HR</h3>
+              <p>End-to-end global talent recruitment, onboarding, compliance, and real-time remote workforce management.</p>
+              <ul class="feature-list">
+                <li>Pre-vetted clinical, tech &amp; BPO staff</li>
+                <li>Powered by Genzhours (genzhours.com)</li>
+                <li>Payroll, KPI tracking &amp; shift compliance</li>
+              </ul>
+            </div>
+            <button class="text-link" type="button" data-service-modal="hr">Explore Remote HR</button>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">All 6 Services</button>
-        <button class="filter-btn" data-filter="healthcare">Healthcare BPO (RPM &amp; CCM)</button>
-        <button class="filter-btn" data-filter="engineering">Software, Web, App &amp; Remote HR</button>
-      </div>
-
-      <div class="services-grid">
-        <!-- 1. Remote Patient Monitoring -->
-        <article class="service-card" data-category="healthcare">
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <div class="service-icon">🩺</div>
-            <span class="badge badge-teal">Healthcare Clinical</span>
-            <h3>Remote Patient Monitoring</h3>
-            <p>Turnkey cellular vitals tracking (BP, glucose, SpO2, weight) with 24/7 clinical triage and full Medicare reimbursement capture.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> CPT 99453, 99454, 99457 &amp; 99458 compliant</li>
-              <li><span>✓</span> Powered by RPMatrix</li>
-              <li><span>✓</span> Automated 16-day transmission tracking</li>
-            </ul>
+            <span class="kicker">Our Proprietary SaaS Platforms</span>
+            <h2 class="section-title">Purpose-Built Products Driving Measurable Results</h2>
           </div>
-          <button class="btn btn-outline btn-sm" data-service-modal="rpm">View Clinical Workflow →</button>
-        </article>
+          <p class="section-subtitle">Unlike traditional agencies, GenzBPO builds and operates its own flagship healthcare and workforce software suites.</p>
+        </div>
 
-        <!-- 2. Chronic Care Management -->
-        <article class="service-card" data-category="healthcare">
-          <div>
-            <div class="service-icon">❤️</div>
-            <span class="badge badge-teal">Healthcare Clinical</span>
-            <h3>Chronic Care Management</h3>
-            <p>Proactive monthly care coordination for patients with 2+ chronic conditions to improve outcomes and recurring practice revenue.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> CPT 99490, 99439 &amp; 99487 billing capture</li>
-              <li><span>✓</span> Personalized care plans &amp; med adherence</li>
-              <li><span>✓</span> Reduces ER visits &amp; hospital readmissions</li>
-            </ul>
-          </div>
-          <button class="btn btn-outline btn-sm" data-service-modal="ccm">View CCM Protocol →</button>
-        </article>
-
-        <!-- 3. Software Development -->
-        <article class="service-card" data-category="engineering">
-          <div>
-            <div class="service-icon">⚙️</div>
-            <span class="badge">Enterprise Tech</span>
-            <h3>Software Development</h3>
-            <p>Custom enterprise software, HIPAA-compliant healthcare backends, microservices, and AI-driven business automation platforms.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> Python, Django, Node.js &amp; PostgreSQL</li>
-              <li><span>✓</span> HL7 / FHIR EHR integrations &amp; APIs</li>
-              <li><span>✓</span> Cloud-native Docker &amp; AWS architecture</li>
-            </ul>
-          </div>
-          <button class="btn btn-outline btn-sm" data-service-modal="software">Explore Architecture →</button>
-        </article>
-
-        <!-- 4. Web Development -->
-        <article class="service-card" data-category="engineering">
-          <div>
-            <div class="service-icon">🌐</div>
-            <span class="badge">Full-Stack Web</span>
-            <h3>Web Development</h3>
-            <p>High-converting corporate websites, SaaS dashboards, e-commerce platforms, and responsive progressive web apps.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> React, Next.js &amp; Tailwind CSS experts</li>
-              <li><span>✓</span> Lightning-fast Core Web Vitals &amp; SEO</li>
-              <li><span>✓</span> Secure role-based client portals</li>
-            </ul>
-          </div>
-          <button class="btn btn-outline btn-sm" data-service-modal="web">Explore Web Stack →</button>
-        </article>
-
-        <!-- 5. App Development -->
-        <article class="service-card" data-category="engineering">
-          <div>
-            <div class="service-icon">📱</div>
-            <span class="badge">Mobile iOS &amp; Android</span>
-            <h3>App Development</h3>
-            <p>Sleek, high-performance iOS and Android mobile apps for telehealth, connected medical devices, and consumer platforms.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> React Native &amp; Flutter development</li>
-              <li><span>✓</span> Bluetooth (BLE) medical device sync</li>
-              <li><span>✓</span> End-to-end App Store &amp; Play deployment</li>
-            </ul>
-          </div>
-          <button class="btn btn-outline btn-sm" data-service-modal="app">Explore Mobile Apps →</button>
-        </article>
-
-        <!-- 6. Remote HR -->
-        <article class="service-card" data-category="engineering">
-          <div>
-            <div class="service-icon">👥</div>
-            <span class="badge badge-purple">Workforce Solutions</span>
-            <h3>Remote HR</h3>
-            <p>End-to-end global talent recruitment, onboarding, compliance, and real-time remote workforce management.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> Pre-vetted clinical, tech &amp; BPO staff</li>
-              <li><span>✓</span> Powered by Genzhours (genzhours.com)</li>
-              <li><span>✓</span> Payroll, KPI tracking &amp; shift compliance</li>
-            </ul>
-          </div>
-          <button class="btn btn-outline btn-sm" data-service-modal="hr">Explore Remote HR →</button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Flagship SaaS Products Section (Rpmatrix & Genzhours) -->
-  <section class="section" id="products">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-teal">Our Proprietary SaaS Platforms</span>
-        <h2 class="section-title">Purpose-Built Products Driving <span class="gradient-text">Measurable Results</span></h2>
-        <p class="section-subtitle">Unlike traditional agencies, GenzBPO builds and operates its own flagship healthcare and workforce software suites.</p>
-      </div>
-
-      <div class="products-grid">
-        <!-- Product 1: Rpmatrix -->
-        <div class="product-card">
+        <div class="products-grid">
+        <article class="product-card is-rpm">
           <div>
             <div class="product-top">
-              <span class="badge badge-teal">Healthcare RPM &amp; CCM Platform</span>
+              <span class="product-tag">Healthcare RPM &amp; CCM Platform</span>
               <span class="product-domain">Clinical platform</span>
             </div>
             <h3 class="product-title">RPMatrix</h3>
-            <p class="product-desc">
-              An all-in-one Remote Patient Monitoring (RPM) and Chronic Care Management (CCM) clinical portal. Connects cellular blood pressure cuffs, glucometers, pulse oximeters, and scales directly to care teams with automated Medicare billing timers.
-            </p>
-
+            <p class="product-desc">An all-in-one Remote Patient Monitoring (RPM) and Chronic Care Management (CCM) clinical portal. Connects cellular blood pressure cuffs, glucometers, pulse oximeters, and scales directly to care teams with automated Medicare billing timers.</p>
             <div class="product-metrics">
-              <div>
-                <strong>16-Day</strong>
-                <span>Auto Device Tracking</span>
-              </div>
-              <div>
-                <strong>20-Min</strong>
-                <span>Clinical Timer Logs</span>
-              </div>
-              <div>
-                <strong>100%</strong>
-                <span>HIPAA Compliant</span>
-              </div>
+              <div><strong>16-Day</strong><span>Auto Device Tracking</span></div>
+              <div><strong>20-Min</strong><span>Clinical Timer Logs</span></div>
+              <div><strong>100%</strong><span>HIPAA Compliant</span></div>
             </div>
-
             <ul class="feature-list">
-              <li><span>✓</span> Real-time abnormal vitals alerts &amp; nurse escalation</li>
-              <li><span>✓</span> Automated CPT 99453, 99454, 99457, 99458 &amp; 99490 billing reports</li>
-              <li><span>✓</span> Zero patient app setup required with cellular IoT medical devices</li>
+              <li>Real-time abnormal vitals alerts &amp; nurse escalation</li>
+              <li>Automated CPT 99453, 99454, 99457, 99458 &amp; 99490 billing reports</li>
+              <li>Zero patient app setup required with cellular IoT medical devices</li>
             </ul>
           </div>
-
           <div class="product-actions">
-            <a href="contact.html?interest=rpmatrix" class="btn btn-teal">Ask about RPMatrix</a>
-            <a href="contact.html" class="btn btn-outline">Request Clinic Demo</a>
+            <a href="contact.html?interest=rpmatrix" class="btn btn-z">Ask about RPMatrix</a>
+            <a href="contact.html" class="btn btn-ghost-light">Request Clinic Demo</a>
           </div>
-        </div>
+        </article>
 
-        <!-- Product 2: Genzhours -->
-        <div class="product-card">
+        <article class="product-card is-gh">
           <div>
             <div class="product-top">
-              <span class="badge badge-purple">Workforce &amp; Time Intelligence</span>
-              <span class="product-domain">genzhours.com</span>
+              <span class="product-tag">Workforce &amp; Time Intelligence</span>
+              <a href="https://genzhours.com" target="_blank" rel="noopener" class="product-domain">genzhours.com ↗</a>
             </div>
             <h3 class="product-title">GenzHours</h3>
-            <p class="product-desc">
-              A next-generation employee time tracking, remote team productivity, and attendance management suite built for modern distributed teams, BPO operations, and remote engineering squads.
-            </p>
-
+            <p class="product-desc">A next-generation employee time tracking, remote team productivity, and attendance management suite built for modern distributed teams, BPO operations, and remote engineering squads.</p>
             <div class="product-metrics">
-              <div>
-                <strong>Real-Time</strong>
-                <span>Activity &amp; App Insights</span>
-              </div>
-              <div>
-                <strong>Automated</strong>
-                <span>Timesheets &amp; Payroll</span>
-              </div>
-              <div>
-                <strong>35%+</strong>
-                <span>Productivity Uplift</span>
-              </div>
+              <div><strong>Real-Time</strong><span>Activity &amp; App Insights</span></div>
+              <div><strong>Automated</strong><span>Timesheets &amp; Payroll</span></div>
+              <div><strong>35%+</strong><span>Productivity Uplift</span></div>
             </div>
-
             <ul class="feature-list">
-              <li><span>✓</span> Smart time tracking with idle detection &amp; proof-of-work snapshots</li>
-              <li><span>✓</span> Shift scheduling, leave management &amp; attendance analytics</li>
-              <li><span>✓</span> Seamless project budgeting &amp; client billing exports</li>
+              <li>Smart time tracking with idle detection &amp; proof-of-work snapshots</li>
+              <li>Shift scheduling, leave management &amp; attendance analytics</li>
+              <li>Seamless project budgeting &amp; client billing exports</li>
             </ul>
           </div>
-
           <div class="product-actions">
             <a href="https://genzhours.com" target="_blank" rel="noopener" class="btn btn-primary">Launch genzhours.com ↗</a>
             <a href="contact.html" class="btn btn-outline">Start Free Team Trial</a>
           </div>
+        </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Interactive ROI & Savings Estimator -->
-  <section class="section bg-alt">
-    <div class="container">
-      <div class="calculator-box">
-        <div class="calc-grid">
-          <div>
-            <span class="badge">Interactive Impact Estimator</span>
-            <h2 style="font-size: 2rem; margin-bottom: 0.85rem;">Calculate Your Annual Revenue &amp; Cost Savings</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">
-              Slide to estimate your clinic's annual Medicare RPM/CCM reimbursement potential alongside your remote engineering and HR staffing savings.
-            </p>
+    <section class="section section-tight" aria-labelledby="calcTitle">
+      <div class="container">
+        <div class="calculator-box">
+          <div class="calc-inputs">
+            <span class="kicker">Interactive Impact Estimator</span>
+            <h2 id="calcTitle">Calculate Your Annual Revenue &amp; Cost Savings</h2>
+            <p>Slide to estimate your clinic's annual Medicare RPM/CCM reimbursement potential alongside your remote engineering and HR staffing savings.</p>
 
             <div class="range-group">
               <div class="range-label">
-                <span>RPM / CCM Enrolled Patients</span>
-                <span id="patientVal" style="color: #34d399;">250 Enrolled Patients</span>
+                <label for="patientRange">RPM / CCM Enrolled Patients</label>
+                <output id="patientVal" class="range-value" for="patientRange">250 Enrolled Patients</output>
               </div>
               <input type="range" id="patientRange" class="range-input" min="0" max="2000" step="50" value="250" />
             </div>
 
-            <div class="range-group" style="margin-bottom: 0;">
+            <div class="range-group">
               <div class="range-label">
-                <span>Remote Developers / HR / Clinical Staff</span>
-                <span id="devVal" style="color: #60a5fa;">5 Remote Specialists</span>
+                <label for="devRange">Remote Developers / HR / Clinical Staff</label>
+                <output id="devVal" class="range-value" for="devRange">5 Remote Specialists</output>
               </div>
               <input type="range" id="devRange" class="range-input" min="0" max="50" step="1" value="5" />
             </div>
           </div>
 
-          <div class="calc-result">
-            <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">Estimated Annual Net Impact</span>
+          <div class="calc-result" aria-live="polite">
+            <span class="calc-result-label">Estimated Annual Net Impact</span>
             <div class="calc-amount" id="totalRoiResult">$564,000</div>
-            <p id="roiBreakdown" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.75rem;">
-              Includes ~$354,000/yr in RPM/CCM Medicare reimbursements + $210,000/yr in remote staffing savings.
-            </p>
-            <a href="contact.html" class="btn btn-primary" style="width: 100%;">Lock In Your Custom Proposal →</a>
+            <p class="calc-breakdown" id="roiBreakdown">Includes ~$354,000/yr in RPM/CCM Medicare reimbursements + $210,000/yr in remote staffing savings.</p>
+            <a href="contact.html" class="btn btn-light btn-block">Lock In Your Custom Proposal</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Service Detail Modal -->
-  <div class="modal-overlay" id="serviceModal">
-    <div class="modal-box">
-      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-      <span class="badge" id="modalBadge">Service Overview</span>
-      <h3 id="modalTitle" style="font-size: 1.75rem; margin-bottom: 0.85rem;">Service Title</h3>
-      <p id="modalDesc" style="color: var(--text-muted); margin-bottom: 1.5rem;"></p>
-      <ul class="feature-list" id="modalList"></ul>
-      <div style="display: flex; gap: 1rem; margin-top: 1.75rem;">
-        <a href="contact.html" class="btn btn-primary">Schedule Consultation</a>
-        <a href="services.html" class="btn btn-outline">Full Services Page</a>
+    <div class="modal-overlay" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-box">
+        <button class="modal-close" id="modalClose" type="button" aria-label="Close">✕</button>
+        <span class="modal-badge" id="modalBadge">Service Overview</span>
+        <h3 id="modalTitle">Service Title</h3>
+        <p id="modalDesc"></p>
+        <ul class="feature-list" id="modalList"></ul>
+        <div class="modal-actions">
+          <a href="contact.html" class="btn btn-primary">Schedule Consultation</a>
+          <a href="services.html" class="btn btn-outline">Full Services Page</a>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="index.html" class="logo" style="margin-bottom: 1rem;">
-            <span class="logo-icon">G</span>
-            <span>Genz<span class="gradient-text">BPO</span></span>
+          <a href="index.html" class="logo" aria-label="GenzBPO home">
+            <img src="logo-dark.png" alt="GenzBPO" class="brand-logo-img brand-logo-dark" width="120" height="55" />
           </a>
-          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
-            Delivering HIPAA-compliant Remote Patient Monitoring, Chronic Care Management, Full-Stack Software, Web &amp; App Development, and Remote HR solutions globally.
-          </p>
+          <p>Delivering HIPAA-compliant Remote Patient Monitoring, Chronic Care Management, Full-Stack Software, Web &amp; App Development, and Remote HR solutions globally.</p>
         </div>
 
         <div class="footer-col">
-          <h4>Our 6 Services</h4>
+          <h2>Our 6 Services</h2>
           <ul class="footer-links">
             <li><a href="services.html#rpm">Remote Patient Monitoring</a></li>
             <li><a href="services.html#ccm">Chronic Care Management</a></li>
@@ -405,7 +349,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Our Products</h4>
+          <h2>Our Products</h2>
           <ul class="footer-links">
             <li><a href="contact.html?interest=rpmatrix">Ask about RPMatrix</a></li>
             <li><a href="https://genzhours.com" target="_blank" rel="noopener">Genzhours (genzhours.com) ↗</a></li>
@@ -415,10 +359,10 @@
         </div>
 
         <div class="footer-col">
-          <h4>Get In Touch</h4>
+          <h2>Get In Touch</h2>
           <ul class="footer-links">
             <li><a href="contact.html">Schedule a Discovery Call</a></li>
-            <li style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.5rem;">24/7 Clinical &amp; Technical Operations</li>
+            <li class="footer-note">24/7 Clinical &amp; Technical Operations</li>
           </ul>
         </div>
       </div>
@@ -433,7 +377,7 @@
 
       <div class="footer-bottom">
         <span>© 2026 GenzBPO. All rights reserved.</span>
-        <span>Learn about <a href="contact.html?interest=rpmatrix" style="color: #a7cfaa;">RPMatrix</a> &amp; <a href="https://genzhours.com" target="_blank" rel="noopener" style="color: #60a5fa;">Genzhours</a></span>
+        <span>Learn about <a href="contact.html?interest=rpmatrix">RPMatrix</a> &amp; <a href="https://genzhours.com" target="_blank" rel="noopener">Genzhours</a></span>
       </div>
     </div>
   </footer>

@@ -3,146 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services | GenzBPO — RPM, CCM, Software, Web, App & Remote HR</title>
+  <title>Our Services | GenzBPO: RPM, CCM, Software, Web, App &amp; Remote HR</title>
+  <meta name="theme-color" content="#0a3f3d" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="styles.css" />
+  <script>try{if(localStorage.getItem('genzbpo-theme')==='dark')document.documentElement.classList.add('pre-dark')}catch(e){}</script>
 </head>
 <body class="page-services">
+  <script>if(document.documentElement.classList.contains('pre-dark'))document.body.classList.add('dark-mode')</script>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">G</span>
-        <span>Genz<span class="gradient-text">BPO</span></span>
+      <a href="index.html" class="logo" aria-label="GenzBPO home">
+        <img src="logo.png" alt="GenzBPO" class="brand-logo-img brand-logo-light" width="112" height="51" />
+        <img src="logo-dark.png" alt="" aria-hidden="true" class="brand-logo-img brand-logo-dark" width="112" height="51" />
       </a>
-      <nav class="nav-links" id="navLinks">
+
+      <nav class="nav-links" id="navLinks" aria-label="Main">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="services.html" class="nav-link active">Services</a>
+        <a href="services.html" class="nav-link active" aria-current="page">Services</a>
         <a href="products.html" class="nav-link">Our Products</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-drawer-cta">Book Discovery Call</a>
       </nav>
+
       <div class="nav-actions">
         <a href="contact.html?interest=rpmatrix" class="btn btn-outline btn-sm">RPMatrix</a>
         <a href="https://genzhours.com" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GenzHours ↗</a>
         <a href="contact.html" class="btn btn-primary btn-sm">Get Proposal</a>
       </div>
+
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" /></svg>
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
       </button>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span class="bar"></span></button>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">End-To-End Capabilities</span>
-        <h1 class="section-title">Six Specialized Pillars Built for <span class="gradient-text">Scale &amp; Compliance</span></h1>
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <span class="kicker">End-To-End Capabilities</span>
+        <h1 class="section-title">Six Specialized Pillars Built for Scale &amp; Compliance</h1>
         <p class="section-subtitle">From clinical patient monitoring to full-stack software engineering and remote workforce management, we deliver measurable ROI.</p>
       </div>
+    </section>
 
-      <div class="services-grid">
-        <div class="service-card" id="rpm">
+    <section class="section section-tight">
+      <div class="container service-rows">
+        <article class="service-row" id="rpm">
+          <span class="service-num" aria-hidden="true">01</span>
           <div>
-            <div class="service-icon">🩺</div>
-            <span class="badge badge-teal">01 • Healthcare BPO</span>
-            <h3>Remote Patient Monitoring (RPM)</h3>
+            <span class="service-cat">Healthcare BPO</span>
+            <h2>Remote Patient Monitoring (RPM)</h2>
             <p>We manage patient enrollment, FDA-cleared cellular device logistics, 24/7 clinical nurse monitoring, and automated billing logs via the <strong>RPMatrix platform</strong>.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> Blood Pressure, Glucometer, SpO2 &amp; Weight Scales</li>
-              <li><span>✓</span> CPT 99453, 99454, 99457 &amp; 99458 compliance</li>
-              <li><span>✓</span> Real-time physician escalation protocols</li>
-              <li><span>✓</span> Zero upfront software cost with turnkey staffing</li>
-            </ul>
+            <a href="contact.html" class="btn btn-primary btn-sm">Launch RPM Program</a>
           </div>
-          <a href="contact.html" class="btn btn-teal btn-sm">Launch RPM Program →</a>
-        </div>
-
-        <div class="service-card" id="ccm">
+          <ul class="feature-list">
+            <li>Blood Pressure, Glucometer, SpO2 &amp; Weight Scales</li>
+            <li>CPT 99453, 99454, 99457 &amp; 99458 compliance</li>
+            <li>Real-time physician escalation protocols</li>
+            <li>Zero upfront software cost with turnkey staffing</li>
+          </ul>
+        </article>
+        <article class="service-row" id="ccm">
+          <span class="service-num" aria-hidden="true">02</span>
           <div>
-            <div class="service-icon">❤️</div>
-            <span class="badge badge-teal">02 • Healthcare BPO</span>
-            <h3>Chronic Care Management (CCM)</h3>
+            <span class="service-cat">Healthcare BPO</span>
+            <h2>Chronic Care Management (CCM)</h2>
             <p>Dedicated clinical care coordinators conduct structured monthly check-ins for patients with multiple chronic illnesses.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> CPT 99490, 99439, 99487 &amp; 99489 billing readiness</li>
-              <li><span>✓</span> Medication reconciliation &amp; refill coordination</li>
-              <li><span>✓</span> Custom care plan creation &amp; EHR documentation</li>
-              <li><span>✓</span> Increases patient retention &amp; quality scores</li>
-            </ul>
+            <a href="contact.html" class="btn btn-primary btn-sm">Launch CCM Program</a>
           </div>
-          <a href="contact.html" class="btn btn-teal btn-sm">Launch CCM Program →</a>
-        </div>
-
-        <div class="service-card" id="software">
+          <ul class="feature-list">
+            <li>CPT 99490, 99439, 99487 &amp; 99489 billing readiness</li>
+            <li>Medication reconciliation &amp; refill coordination</li>
+            <li>Custom care plan creation &amp; EHR documentation</li>
+            <li>Increases patient retention &amp; quality scores</li>
+          </ul>
+        </article>
+        <article class="service-row" id="software">
+          <span class="service-num" aria-hidden="true">03</span>
           <div>
-            <div class="service-icon">⚙️</div>
-            <span class="badge">03 • Custom Engineering</span>
-            <h3>Software Development</h3>
+            <span class="service-cat">Custom Engineering</span>
+            <h2>Software Development</h2>
             <p>Bespoke enterprise software, healthcare IT systems, SaaS products, and secure API ecosystems tailored to your workflow.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> Python, Django, Node.js, PostgreSQL &amp; MongoDB</li>
-              <li><span>✓</span> HIPAA-compliant cloud infrastructure &amp; Docker</li>
-              <li><span>✓</span> Medical billing &amp; EHR/EMR interoperability</li>
-              <li><span>✓</span> Automated testing &amp; continuous deployment</li>
-            </ul>
+            <a href="contact.html" class="btn btn-primary btn-sm">Discuss Software Project</a>
           </div>
-          <a href="contact.html" class="btn btn-primary btn-sm">Discuss Software Project →</a>
-        </div>
-
-        <div class="service-card" id="web">
+          <ul class="feature-list">
+            <li>Python, Django, Node.js, PostgreSQL &amp; MongoDB</li>
+            <li>HIPAA-compliant cloud infrastructure &amp; Docker</li>
+            <li>Medical billing &amp; EHR/EMR interoperability</li>
+            <li>Automated testing &amp; continuous deployment</li>
+          </ul>
+        </article>
+        <article class="service-row" id="web">
+          <span class="service-num" aria-hidden="true">04</span>
           <div>
-            <div class="service-icon">🌐</div>
-            <span class="badge">04 • Web Engineering</span>
-            <h3>Web Development</h3>
+            <span class="service-cat">Web Engineering</span>
+            <h2>Web Development</h2>
             <p>Responsive, ultra-fast web applications, multi-tenant SaaS dashboards, and conversion-focused enterprise websites.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> React.js, Next.js, TypeScript &amp; Tailwind CSS</li>
-              <li><span>✓</span> Custom admin portals &amp; real-time data visualizations</li>
-              <li><span>✓</span> E-commerce storefronts &amp; payment integrations</li>
-              <li><span>✓</span> Technical SEO &amp; sub-second page speeds</li>
-            </ul>
+            <a href="contact.html" class="btn btn-primary btn-sm">Build Web Platform</a>
           </div>
-          <a href="contact.html" class="btn btn-primary btn-sm">Build Web Platform →</a>
-        </div>
-
-        <div class="service-card" id="app">
+          <ul class="feature-list">
+            <li>React.js, Next.js, TypeScript &amp; Tailwind CSS</li>
+            <li>Custom admin portals &amp; real-time data visualizations</li>
+            <li>E-commerce storefronts &amp; payment integrations</li>
+            <li>Technical SEO &amp; sub-second page speeds</li>
+          </ul>
+        </article>
+        <article class="service-row" id="app">
+          <span class="service-num" aria-hidden="true">05</span>
           <div>
-            <div class="service-icon">📱</div>
-            <span class="badge">05 • Mobile Solutions</span>
-            <h3>App Development</h3>
+            <span class="service-cat">Mobile Solutions</span>
+            <h2>App Development</h2>
             <p>Cross-platform and native mobile applications engineered for smooth UX, offline reliability, and connected hardware.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> iOS &amp; Android apps with React Native &amp; Flutter</li>
-              <li><span>✓</span> Telehealth video, chat &amp; BLE device pairing</li>
-              <li><span>✓</span> Push notifications &amp; biometric security</li>
-              <li><span>✓</span> Full App Store &amp; Google Play submission support</li>
-            </ul>
+            <a href="contact.html" class="btn btn-primary btn-sm">Build Mobile App</a>
           </div>
-          <a href="contact.html" class="btn btn-primary btn-sm">Build Mobile App →</a>
-        </div>
-
-        <div class="service-card" id="hr">
+          <ul class="feature-list">
+            <li>iOS &amp; Android apps with React Native &amp; Flutter</li>
+            <li>Telehealth video, chat &amp; BLE device pairing</li>
+            <li>Push notifications &amp; biometric security</li>
+            <li>Full App Store &amp; Google Play submission support</li>
+          </ul>
+        </article>
+        <article class="service-row" id="hr">
+          <span class="service-num" aria-hidden="true">06</span>
           <div>
-            <div class="service-icon">👥</div>
-            <span class="badge badge-purple">06 • People &amp; Operations</span>
-            <h3>Remote HR</h3>
-            <p>Build and manage high-performing remote teams without overhead—monitored and optimized through <strong>genzhours.com</strong>.</p>
-            <ul class="feature-list">
-              <li><span>✓</span> Rapid sourcing of developers, nurses &amp; BPO agents</li>
-              <li><span>✓</span> Time tracking &amp; attendance via Genzhours</li>
-              <li><span>✓</span> Payroll administration &amp; performance KPIs</li>
-              <li><span>✓</span> Dedicated account management &amp; HR compliance</li>
-            </ul>
+            <span class="service-cat">People &amp; Operations</span>
+            <h2>Remote HR</h2>
+            <p>Build and manage high-performing remote teams without overhead, monitored and optimized through <strong>genzhours.com</strong>.</p>
+            <a href="contact.html" class="btn btn-primary btn-sm">Hire Remote Talent</a>
           </div>
-          <a href="contact.html" class="btn btn-primary btn-sm">Hire Remote Talent →</a>
-        </div>
+          <ul class="feature-list">
+            <li>Rapid sourcing of developers, nurses &amp; BPO agents</li>
+            <li>Time tracking &amp; attendance via Genzhours</li>
+            <li>Payroll administration &amp; performance KPIs</li>
+            <li>Dedicated account management &amp; HR compliance</li>
+          </ul>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" aria-label="GenzBPO home">
+            <img src="logo-dark.png" alt="GenzBPO" class="brand-logo-img brand-logo-dark" width="120" height="55" />
+          </a>
+          <p>Delivering HIPAA-compliant Remote Patient Monitoring, Chronic Care Management, Full-Stack Software, Web &amp; App Development, and Remote HR solutions globally.</p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Our 6 Services</h2>
+          <ul class="footer-links">
+            <li><a href="services.html#rpm">Remote Patient Monitoring</a></li>
+            <li><a href="services.html#ccm">Chronic Care Management</a></li>
+            <li><a href="services.html#software">Software Development</a></li>
+            <li><a href="services.html#web">Web Development</a></li>
+            <li><a href="services.html#app">App Development</a></li>
+            <li><a href="services.html#hr">Remote HR</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Our Products</h2>
+          <ul class="footer-links">
+            <li><a href="contact.html?interest=rpmatrix">Ask about RPMatrix</a></li>
+            <li><a href="https://genzhours.com" target="_blank" rel="noopener">Genzhours (genzhours.com) ↗</a></li>
+            <li><a href="products.html">Product Comparison</a></li>
+            <li><a href="contact.html">Request Live Demo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Get In Touch</h2>
+          <ul class="footer-links">
+            <li><a href="contact.html">Schedule a Discovery Call</a></li>
+            <li class="footer-note">24/7 Clinical &amp; Technical Operations</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-contact-links" aria-label="Company contact and social links">
         <a href="mailto:info@genzbpo.com">info@genzbpo.com</a>
         <a href="https://genzbpo.com" target="_blank" rel="noopener noreferrer">genzbpo.com ↗</a>
@@ -150,12 +200,10 @@
         <a href="https://www.instagram.com/genzbpo/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
         <a href="https://wa.me/13213262106" target="_blank" rel="noopener noreferrer">WhatsApp +1 321-326-2106</a>
       </div>
+
       <div class="footer-bottom">
         <span>© 2026 GenzBPO. All rights reserved.</span>
-        <div>
-          <a href="contact.html?interest=rpmatrix" style="margin-right: 1rem; color: #a7cfaa;">Ask about RPMatrix</a>
-          <a href="https://genzhours.com" target="_blank" rel="noopener noreferrer" style="color: #60a5fa;">genzhours.com ↗</a>
-        </div>
+        <span>Learn about <a href="contact.html?interest=rpmatrix">RPMatrix</a> &amp; <a href="https://genzhours.com" target="_blank" rel="noopener">Genzhours</a></span>
       </div>
     </div>
   </footer>

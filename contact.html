@@ -3,90 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | GenzBPO — Schedule a Consultation or Product Demo</title>
+  <title>Contact Us | GenzBPO: Schedule a Consultation or Product Demo</title>
+  <meta name="theme-color" content="#0a3f3d" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="styles.css" />
+  <script>try{if(localStorage.getItem('genzbpo-theme')==='dark')document.documentElement.classList.add('pre-dark')}catch(e){}</script>
 </head>
 <body class="page-contact">
+  <script>if(document.documentElement.classList.contains('pre-dark'))document.body.classList.add('dark-mode')</script>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">G</span>
-        <span>Genz<span class="gradient-text">BPO</span></span>
+      <a href="index.html" class="logo" aria-label="GenzBPO home">
+        <img src="logo.png" alt="GenzBPO" class="brand-logo-img brand-logo-light" width="112" height="51" />
+        <img src="logo-dark.png" alt="" aria-hidden="true" class="brand-logo-img brand-logo-dark" width="112" height="51" />
       </a>
-      <nav class="nav-links" id="navLinks">
+
+      <nav class="nav-links" id="navLinks" aria-label="Main">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="products.html" class="nav-link">Our Products</a>
-        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="contact.html" class="nav-link active" aria-current="page">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-drawer-cta">Book Discovery Call</a>
       </nav>
+
       <div class="nav-actions">
         <a href="https://genzhours.com" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GenzHours ↗</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Discovery Call</a>
       </div>
+
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" /></svg>
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
       </button>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span class="bar"></span></button>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Let's Build &amp; Scale Together</span>
-        <h1 class="section-title">Start Your Project or <span class="gradient-text">Book a Live Demo</span></h1>
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <span class="kicker">Let's Build &amp; Scale Together</span>
+        <h1 class="section-title">Start Your Project or Book a Live Demo</h1>
         <p class="section-subtitle">Connect with our healthcare clinical directors or software engineering leads for a custom roadmap.</p>
       </div>
+    </section>
 
-      <div class="contact-grid">
+    <section class="section section-tight">
+      <div class="container contact-grid">
         <div>
-          <div class="info-card">
-            <div class="info-icon">🩺</div>
-            <div>
-              <h4>Healthcare RPM &amp; CCM</h4>
-              <p style="color: var(--text-muted); font-size: 0.92rem;">Turnkey clinical monitoring and RPMatrix onboarding for medical practices.</p>
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></div>
+              <div>
+                <h3>Healthcare RPM &amp; CCM</h3>
+                <p>Turnkey clinical monitoring and RPMatrix onboarding for medical practices.</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19.5h20"/></svg></div>
+              <div>
+                <h3>Software, Web &amp; App Engineering</h3>
+                <p>Dedicated full-stack developers for custom SaaS, web portals, and mobile apps.</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></div>
+              <div>
+                <h3>Remote HR &amp; Genzhours</h3>
+                <p>Scale pre-vetted remote staff tracked transparently via <a href="https://genzhours.com" target="_blank" rel="noopener">genzhours.com</a>.</p>
+              </div>
             </div>
           </div>
-
-          <div class="info-card">
-            <div class="info-icon">💻</div>
-            <div>
-              <h4>Software, Web &amp; App Engineering</h4>
-              <p style="color: var(--text-muted); font-size: 0.92rem;">Dedicated full-stack developers for custom SaaS, web portals, and mobile apps.</p>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="info-icon">⏱️</div>
-            <div>
-              <h4>Remote HR &amp; Genzhours</h4>
-              <p style="color: var(--text-muted); font-size: 0.92rem;">Scale pre-vetted remote staff tracked transparently via <a href="https://genzhours.com" target="_blank" rel="noopener" style="color: #60a5fa;">genzhours.com</a>.</p>
-            </div>
+          <div class="direct-lines">
+            <span>Prefer to reach us directly?</span>
+            <a href="mailto:info@genzbpo.com">info@genzbpo.com</a>
+            <a href="https://wa.me/13213262106" target="_blank" rel="noopener noreferrer">WhatsApp +1 321-326-2106</a>
           </div>
         </div>
 
         <div class="contact-form-card">
-          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Request a Consultation</h3>
+          <h2>Request a Consultation</h2>
           <form id="contactForm">
             <div class="form-row">
               <div class="form-group">
-                <label for="fullName">Full Name *</label>
-                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Dr. John Doe / Jane Smith" required />
+                <label for="fullName">Full Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Dr. John Doe / Jane Smith" autocomplete="name" required />
               </div>
               <div class="form-group">
-                <label for="email">Work Email *</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="name@company.com" required />
+                <label for="email">Work Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="name@company.com" autocomplete="email" required />
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="phone">Phone / WhatsApp</label>
-                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" />
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" autocomplete="tel" />
               </div>
               <div class="form-group">
-                <label for="serviceInterest">Service or Product of Interest *</label>
+                <label for="serviceInterest">Service or Product of Interest <span class="req" aria-hidden="true">*</span></label>
                 <select id="serviceInterest" name="serviceInterest" class="form-control" required>
                   <option value="Remote Patient Monitoring (RPM)">Remote Patient Monitoring (RPM)</option>
                   <option value="Chronic Care Management (CCM)">Chronic Care Management (CCM)</option>
@@ -105,17 +127,56 @@
               <textarea id="message" name="message" rows="4" class="form-control" placeholder="Tell us about your patient volume, software requirements, or remote hiring goals..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry →</button>
+            <button type="submit" class="btn btn-primary btn-block">Submit Inquiry</button>
 
-            <div id="formStatus" style="display: none; margin-top: 1.25rem; padding: 1rem; border-radius: 10px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.92rem;"></div>
+            <div id="formStatus" class="form-status" role="status" hidden></div>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" aria-label="GenzBPO home">
+            <img src="logo-dark.png" alt="GenzBPO" class="brand-logo-img brand-logo-dark" width="120" height="55" />
+          </a>
+          <p>Delivering HIPAA-compliant Remote Patient Monitoring, Chronic Care Management, Full-Stack Software, Web &amp; App Development, and Remote HR solutions globally.</p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Our 6 Services</h2>
+          <ul class="footer-links">
+            <li><a href="services.html#rpm">Remote Patient Monitoring</a></li>
+            <li><a href="services.html#ccm">Chronic Care Management</a></li>
+            <li><a href="services.html#software">Software Development</a></li>
+            <li><a href="services.html#web">Web Development</a></li>
+            <li><a href="services.html#app">App Development</a></li>
+            <li><a href="services.html#hr">Remote HR</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Our Products</h2>
+          <ul class="footer-links">
+            <li><a href="contact.html?interest=rpmatrix">Ask about RPMatrix</a></li>
+            <li><a href="https://genzhours.com" target="_blank" rel="noopener">Genzhours (genzhours.com) ↗</a></li>
+            <li><a href="products.html">Product Comparison</a></li>
+            <li><a href="contact.html">Request Live Demo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Get In Touch</h2>
+          <ul class="footer-links">
+            <li><a href="contact.html">Schedule a Discovery Call</a></li>
+            <li class="footer-note">24/7 Clinical &amp; Technical Operations</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-contact-links" aria-label="Company contact and social links">
         <a href="mailto:info@genzbpo.com">info@genzbpo.com</a>
         <a href="https://genzbpo.com" target="_blank" rel="noopener noreferrer">genzbpo.com ↗</a>
@@ -123,9 +184,10 @@
         <a href="https://www.instagram.com/genzbpo/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
         <a href="https://wa.me/13213262106" target="_blank" rel="noopener noreferrer">WhatsApp +1 321-326-2106</a>
       </div>
+
       <div class="footer-bottom">
         <span>© 2026 GenzBPO. All rights reserved.</span>
-        <a href="https://genzhours.com" target="_blank" rel="noopener noreferrer" style="color: #60a5fa;">genzhours.com ↗</a>
+        <span>Learn about <a href="contact.html?interest=rpmatrix">RPMatrix</a> &amp; <a href="https://genzhours.com" target="_blank" rel="noopener">Genzhours</a></span>
       </div>
     </div>
   </footer>

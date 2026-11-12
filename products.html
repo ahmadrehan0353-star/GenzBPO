@@ -3,107 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Products | RPMatrix & Genzhours</title>
+  <title>Our Products | RPMatrix &amp; Genzhours</title>
+  <meta name="theme-color" content="#0a3f3d" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="styles.css" />
+  <script>try{if(localStorage.getItem('genzbpo-theme')==='dark')document.documentElement.classList.add('pre-dark')}catch(e){}</script>
 </head>
 <body class="page-products">
+  <script>if(document.documentElement.classList.contains('pre-dark'))document.body.classList.add('dark-mode')</script>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">G</span>
-        <span>Genz<span class="gradient-text">BPO</span></span>
+      <a href="index.html" class="logo" aria-label="GenzBPO home">
+        <img src="logo.png" alt="GenzBPO" class="brand-logo-img brand-logo-light" width="112" height="51" />
+        <img src="logo-dark.png" alt="" aria-hidden="true" class="brand-logo-img brand-logo-dark" width="112" height="51" />
       </a>
-      <nav class="nav-links" id="navLinks">
+
+      <nav class="nav-links" id="navLinks" aria-label="Main">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
-        <a href="products.html" class="nav-link active">Our Products</a>
+        <a href="products.html" class="nav-link active" aria-current="page">Our Products</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-drawer-cta">Book Discovery Call</a>
       </nav>
+
       <div class="nav-actions">
-        <a href="contact.html?interest=rpmatrix" class="btn btn-teal btn-sm">Ask about RPMatrix</a>
+        <a href="contact.html?interest=rpmatrix" class="btn btn-outline btn-sm">Ask about RPMatrix</a>
         <a href="https://genzhours.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit genzhours.com ↗</a>
       </div>
+
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" /></svg>
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
       </button>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span class="bar"></span></button>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-teal">Flagship SaaS Ecosystem</span>
-        <h1 class="section-title">Engineered by GenzBPO: <span class="gradient-text">Rpmatrix &amp; Genzhours</span></h1>
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <span class="kicker">Flagship SaaS Ecosystem</span>
+        <h1 class="section-title">Engineered by GenzBPO: Rpmatrix &amp; Genzhours</h1>
         <p class="section-subtitle">Explore our two proprietary SaaS platforms powering clinical healthcare telemetry and global remote workforce productivity.</p>
       </div>
+    </section>
 
-      <div class="products-grid">
-        <!-- RPMatrix -->
-        <div class="product-card">
+    <section class="section section-tight">
+      <div class="container products-grid">
+        <article class="product-card is-rpm">
           <div>
             <div class="product-top">
-              <span class="badge badge-teal">Clinical SaaS Platform</span>
+              <span class="product-tag">Clinical SaaS Platform</span>
               <a href="contact.html?interest=rpmatrix" class="product-domain">Ask about RPMatrix</a>
             </div>
             <h2 class="product-title">Rpmatrix</h2>
-            <p class="product-desc">
-              Rpmatrix is our comprehensive Remote Patient Monitoring (RPM) and Chronic Care Management (CCM) software platform designed for medical practices, health systems, and care coordination teams.
-            </p>
+            <p class="product-desc">Rpmatrix is our comprehensive Remote Patient Monitoring (RPM) and Chronic Care Management (CCM) software platform designed for medical practices, health systems, and care coordination teams.</p>
             <div class="product-metrics">
               <div><strong>CPT Ready</strong><span>99453–99458 &amp; 99490</span></div>
               <div><strong>IoT Cellular</strong><span>Plug &amp; Play Vitals</span></div>
               <div><strong>Smart Triage</strong><span>Color-Coded Alerts</span></div>
             </div>
             <ul class="feature-list">
-              <li><span>✓</span> Automated tracking of 16-day device readings &amp; 20-minute clinical care time</li>
-              <li><span>✓</span> Instant threshold alerts for hypertension, diabetes &amp; cardiopulmonary care</li>
-              <li><span>✓</span> One-click monthly CMS-compliant billing &amp; audit exports</li>
-              <li><span>✓</span> Optional 24/7 GenzBPO clinical monitoring staff included</li>
+              <li>Automated tracking of 16-day device readings &amp; 20-minute clinical care time</li>
+              <li>Instant threshold alerts for hypertension, diabetes &amp; cardiopulmonary care</li>
+              <li>One-click monthly CMS-compliant billing &amp; audit exports</li>
+              <li>Optional 24/7 GenzBPO clinical monitoring staff included</li>
             </ul>
           </div>
           <div class="product-actions">
-            <a href="contact.html?interest=rpmatrix" class="btn btn-teal">Ask about RPMatrix</a>
-            <a href="contact.html?interest=rpmatrix" class="btn btn-outline">Book RPMatrix Demo</a>
+            <a href="contact.html?interest=rpmatrix" class="btn btn-z">Ask about RPMatrix</a>
+            <a href="contact.html?interest=rpmatrix" class="btn btn-ghost-light">Book RPMatrix Demo</a>
           </div>
-        </div>
+        </article>
 
-        <!-- GenzHours -->
-        <div class="product-card">
+        <article class="product-card is-gh">
           <div>
             <div class="product-top">
-              <span class="badge badge-purple">Workforce Management SaaS</span>
+              <span class="product-tag">Workforce Management SaaS</span>
               <a href="https://genzhours.com" target="_blank" rel="noopener" class="product-domain">https://genzhours.com ↗</a>
             </div>
             <h2 class="product-title">Genzhours</h2>
-            <p class="product-desc">
-              Genzhours is our intelligent employee time-tracking, shift attendance, and remote team productivity platform built to give managers transparent insights without micromanagement.
-            </p>
+            <p class="product-desc">Genzhours is our intelligent employee time-tracking, shift attendance, and remote team productivity platform built to give managers transparent insights without micromanagement.</p>
             <div class="product-metrics">
               <div><strong>Live</strong><span>Attendance &amp; Shifts</span></div>
               <div><strong>Proof of Work</strong><span>Activity &amp; Captures</span></div>
               <div><strong>1-Click</strong><span>Payroll Timesheets</span></div>
             </div>
             <ul class="feature-list">
-              <li><span>✓</span> Real-time clock-in/out, active vs. idle time &amp; application usage analytics</li>
-              <li><span>✓</span> Automated screenshot verification &amp; project task time allocation</li>
-              <li><span>✓</span> Shift scheduling, overtime alerts &amp; leave request workflows</li>
-              <li><span>✓</span> Powers GenzBPO's Remote HR &amp; distributed engineering teams</li>
+              <li>Real-time clock-in/out, active vs. idle time &amp; application usage analytics</li>
+              <li>Automated screenshot verification &amp; project task time allocation</li>
+              <li>Shift scheduling, overtime alerts &amp; leave request workflows</li>
+              <li>Powers GenzBPO's Remote HR &amp; distributed engineering teams</li>
             </ul>
           </div>
           <div class="product-actions">
             <a href="https://genzhours.com" target="_blank" rel="noopener" class="btn btn-primary">Go to genzhours.com ↗</a>
             <a href="contact.html" class="btn btn-outline">Book Genzhours Demo</a>
           </div>
-        </div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" aria-label="GenzBPO home">
+            <img src="logo-dark.png" alt="GenzBPO" class="brand-logo-img brand-logo-dark" width="120" height="55" />
+          </a>
+          <p>Delivering HIPAA-compliant Remote Patient Monitoring, Chronic Care Management, Full-Stack Software, Web &amp; App Development, and Remote HR solutions globally.</p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Our 6 Services</h2>
+          <ul class="footer-links">
+            <li><a href="services.html#rpm">Remote Patient Monitoring</a></li>
+            <li><a href="services.html#ccm">Chronic Care Management</a></li>
+            <li><a href="services.html#software">Software Development</a></li>
+            <li><a href="services.html#web">Web Development</a></li>
+            <li><a href="services.html#app">App Development</a></li>
+            <li><a href="services.html#hr">Remote HR</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Our Products</h2>
+          <ul class="footer-links">
+            <li><a href="contact.html?interest=rpmatrix">Ask about RPMatrix</a></li>
+            <li><a href="https://genzhours.com" target="_blank" rel="noopener">Genzhours (genzhours.com) ↗</a></li>
+            <li><a href="products.html">Product Comparison</a></li>
+            <li><a href="contact.html">Request Live Demo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Get In Touch</h2>
+          <ul class="footer-links">
+            <li><a href="contact.html">Schedule a Discovery Call</a></li>
+            <li class="footer-note">24/7 Clinical &amp; Technical Operations</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-contact-links" aria-label="Company contact and social links">
         <a href="mailto:info@genzbpo.com">info@genzbpo.com</a>
         <a href="https://genzbpo.com" target="_blank" rel="noopener noreferrer">genzbpo.com ↗</a>
@@ -111,12 +160,10 @@
         <a href="https://www.instagram.com/genzbpo/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
         <a href="https://wa.me/13213262106" target="_blank" rel="noopener noreferrer">WhatsApp +1 321-326-2106</a>
       </div>
+
       <div class="footer-bottom">
         <span>© 2026 GenzBPO. All rights reserved.</span>
-        <div>
-          <a href="contact.html?interest=rpmatrix" style="margin-right: 1rem; color: #a7cfaa;">Ask about RPMatrix</a>
-          <a href="https://genzhours.com" target="_blank" rel="noopener noreferrer" style="color: #60a5fa;">genzhours.com ↗</a>
-        </div>
+        <span>Learn about <a href="contact.html?interest=rpmatrix">RPMatrix</a> &amp; <a href="https://genzhours.com" target="_blank" rel="noopener">Genzhours</a></span>
       </div>
     </div>
   </footer>

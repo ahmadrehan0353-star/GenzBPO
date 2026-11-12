@@ -1,18 +1,18 @@
 /* ==========================================================================
-   GenzBPO Interactive Script (script.js)
-   Handles Mobile Menu, Service Filtering, Modals, ROI Calculator & Forms
+   GenzBPO interactive script
+   Theme toggle, mobile menu, service filtering, ROI calculator,
+   service detail modal and the contact form handler.
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // ---- Theme -------------------------------------------------------------
   const themeToggle = document.getElementById('themeToggle');
   let darkModeEnabled = false;
-
   try {
     darkModeEnabled = localStorage.getItem('genzbpo-theme') === 'dark';
   } catch {
     darkModeEnabled = false;
   }
-
   document.body.classList.toggle('dark-mode', darkModeEnabled);
 
   if (themeToggle) {
@@ -23,72 +23,65 @@ document.addEventListener('DOMContentLoaded', () => {
       themeToggle.setAttribute('title', label);
       themeToggle.setAttribute('aria-pressed', String(isDark));
     };
-
     updateThemeButton();
     themeToggle.addEventListener('click', () => {
       const isDark = document.body.classList.toggle('dark-mode');
       try {
         localStorage.setItem('genzbpo-theme', isDark ? 'dark' : 'light');
       } catch {
-        // The current page still changes theme when storage is unavailable.
+        // The page still switches theme when storage is unavailable.
       }
       updateThemeButton();
     });
   }
 
-  // 1. Sticky Navbar & Mobile Drawer Toggle
+  // ---- Sticky header & mobile menu --------------------------------------
   const navbar = document.querySelector('.navbar');
   const mobileToggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      navbar?.classList.add('scrolled');
-    } else {
-      navbar?.classList.remove('scrolled');
-    }
-  });
+  const onScroll = () => navbar?.classList.toggle('scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      const isOpen = navLinks.classList.contains('active');
-      mobileToggle.innerHTML = isOpen ? '✕' : '☰';
-    });
-
-    // Close menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileToggle.innerHTML = '☰';
-      });
+    const setMenu = (open) => {
+      navLinks.classList.toggle('active', open);
+      mobileToggle.setAttribute('aria-expanded', String(open));
+      mobileToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    mobileToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('active')));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        setMenu(false);
+        mobileToggle.focus();
+      }
     });
   }
 
-  // 2. Service Category Filtering (All / Healthcare / Tech & HR)
+  // ---- Service filtering -------------------------------------------------
   const filterBtns = document.querySelectorAll('.filter-btn');
   const serviceCards = document.querySelectorAll('.service-card[data-category]');
 
-  if (filterBtns.length > 0) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
-        const selected = btn.getAttribute('data-filter');
-        serviceCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (selected === 'all' || selected === category) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+      const selected = btn.getAttribute('data-filter');
+      serviceCards.forEach(card => {
+        const match = selected === 'all' || selected === card.getAttribute('data-category');
+        card.hidden = !match;
       });
     });
-  }
+  });
 
-  // 3. Interactive ROI & Reimbursement Calculator
+  // ---- ROI calculator ----------------------------------------------------
   const patientInput = document.getElementById('patientRange');
   const devInput = document.getElementById('devRange');
   const patientValueEl = document.getElementById('patientVal');
@@ -96,22 +89,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalRoiEl = document.getElementById('totalRoiResult');
   const breakdownEl = document.getElementById('roiBreakdown');
 
+  const paintFill = (input) => {
+    const min = Number(input.min) || 0;
+    const max = Number(input.max) || 100;
+    const pct = ((Number(input.value) - min) / (max - min)) * 100;
+    input.style.setProperty('--fill', `${pct}%`);
+  };
+
   function updateCalculator() {
     if (!patientInput || !devInput) return;
     const patients = parseInt(patientInput.value, 10);
     const devs = parseInt(devInput.value, 10);
 
-    patientValueEl.textContent = `${patients} Enrolled Patients`;
+    patientValueEl.textContent = `${patients.toLocaleString()} Enrolled Patients`;
     devValueEl.textContent = `${devs} Remote Specialists`;
 
     // Avg Medicare RPM + CCM revenue ~$118/patient/mo -> annual
     const annualHealthcareRev = patients * 118 * 12;
-    // Avg Annual BPO / Remote Engineering & HR payroll savings ~$42,000 per FTE
+    // Avg annual BPO / remote engineering & HR payroll savings ~$42,000 per FTE
     const annualTeamSavings = devs * 42000;
     const combinedImpact = annualHealthcareRev + annualTeamSavings;
 
     totalRoiEl.textContent = '$' + combinedImpact.toLocaleString();
     breakdownEl.textContent = `Includes ~$${annualHealthcareRev.toLocaleString()}/yr in RPM/CCM Medicare reimbursements + $${annualTeamSavings.toLocaleString()}/yr in remote staffing savings.`;
+
+    paintFill(patientInput);
+    paintFill(devInput);
   }
 
   if (patientInput && devInput) {
@@ -120,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalculator();
   }
 
-  // 4. Service Deep-Dive Modal System
+  // ---- Service detail modal ---------------------------------------------
   const serviceDetails = {
     rpm: {
       badge: 'Clinical Care & Telemetry',
@@ -180,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hr: {
       badge: 'Global Talent & Workforce',
       title: 'Remote HR & Workforce Management',
-      desc: 'Recruit, onboard, monitor, and retain top-tier remote healthcare, engineering, and BPO talent globally—backed by Genzhours (genzhours.com) workforce analytics.',
+      desc: 'Recruit, onboard, monitor, and retain top-tier remote healthcare, engineering, and BPO talent globally, backed by Genzhours (genzhours.com) workforce analytics.',
       bullets: [
         'Rapid talent sourcing & technical/clinical vetting within 7 days',
         'Automated attendance, shift scheduling & productivity tracking via Genzhours',
@@ -196,32 +199,58 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBadge = document.getElementById('modalBadge');
   const modalDesc = document.getElementById('modalDesc');
   const modalList = document.getElementById('modalList');
+  let lastTrigger = null;
+
+  const openModal = (data, trigger) => {
+    modalBadge.textContent = data.badge;
+    modalTitle.textContent = data.title;
+    modalDesc.textContent = data.desc;
+    modalList.replaceChildren(...data.bullets.map(text => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      return li;
+    }));
+    lastTrigger = trigger;
+    modalOverlay.classList.add('open');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modalClose?.focus();
+  };
+
+  const closeModal = () => {
+    if (!modalOverlay?.classList.contains('open')) return;
+    modalOverlay.classList.remove('open');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lastTrigger?.focus();
+  };
 
   document.querySelectorAll('[data-service-modal]').forEach(button => {
     button.addEventListener('click', () => {
-      const key = button.getAttribute('data-service-modal');
-      const data = serviceDetails[key];
-      if (!data || !modalOverlay) return;
-
-      modalBadge.textContent = data.badge;
-      modalTitle.textContent = data.title;
-      modalDesc.textContent = data.desc;
-      modalList.innerHTML = data.bullets
-        .map(item => `<li><span>✓</span> ${item}</li>`)
-        .join('');
-
-      modalOverlay.classList.add('open');
+      const data = serviceDetails[button.getAttribute('data-service-modal')];
+      if (data && modalOverlay) openModal(data, button);
     });
   });
 
-  if (modalClose && modalOverlay) {
-    modalClose.addEventListener('click', () => modalOverlay.classList.remove('open'));
+  if (modalOverlay) {
+    modalClose?.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) modalOverlay.classList.remove('open');
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!modalOverlay.classList.contains('open')) return;
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Tab') {
+        const focusable = modalOverlay.querySelectorAll('a[href], button');
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
   }
 
-  // 5. Contact Form Submission Handler
+  // ---- Contact form ------------------------------------------------------
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
   const serviceInterest = document.getElementById('serviceInterest');
@@ -252,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const mailtoUrl = `mailto:info@genzbpo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
       if (formStatus) {
-        formStatus.style.display = 'block';
+        formStatus.hidden = false;
         formStatus.textContent = 'Your email app should open with this inquiry addressed to info@genzbpo.com. Review the message and press Send. If it does not open, email info@genzbpo.com directly.';
       }
       window.location.href = mailtoUrl;
