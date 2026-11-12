@@ -387,6 +387,10 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 textarea.form-control { resize: vertical; min-height: 130px; }
 .form-status { margin-top: 1.25rem; padding: 1rem 1.1rem; border-radius: var(--radius); background: var(--mint); border-left: 3px solid var(--teal); font-size: .93rem; }
 .form-status[hidden] { display: none; }
+.form-status.is-error { background: color-mix(in srgb, #d9534f 14%, var(--surface)); border-left-color: #c9423d; }
+.form-note { margin-top: .9rem; font-size: .85rem; color: var(--muted); }
+.form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.btn[disabled] { opacity: .65; cursor: progress; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--teal-ink); color: var(--on-dark-muted); padding: clamp(3.5rem, 7vw, 5rem) 0 2rem; }

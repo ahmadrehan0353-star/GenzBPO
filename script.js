@@ -4,7 +4,44 @@
    service detail modal and the contact form handler.
    ========================================================================== */
 
+/* ---- Site settings --------------------------------------------------------
+   formEndpoint: where contact-form inquiries are sent. FormSubmit emails each
+     inquiry to info@genzbpo.com. The very first inquiry triggers a one-time
+     confirmation email to that inbox; click the link in it to start receiving.
+   gaMeasurementId: paste your Google Analytics 4 ID (looks like G-XXXXXXXXXX)
+     to turn on analytics. Leave empty to keep analytics off.
+   -------------------------------------------------------------------------- */
+const SITE_CONFIG = {
+  formEndpoint: 'https://formsubmit.co/ajax/info@genzbpo.com',
+  gaMeasurementId: ''
+};
+
+window.dataLayer = window.dataLayer || [];
+function gtag() { window.dataLayer.push(arguments); }
+if (SITE_CONFIG.gaMeasurementId) {
+  const ga = document.createElement('script');
+  ga.async = true;
+  ga.src = `https://www.googletagmanager.com/gtag/js?id=${SITE_CONFIG.gaMeasurementId}`;
+  document.head.appendChild(ga);
+  gtag('js', new Date());
+  gtag('config', SITE_CONFIG.gaMeasurementId);
+}
+const trackEvent = (name, params = {}) => {
+  if (SITE_CONFIG.gaMeasurementId) gtag('event', name, params);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+  // ---- Lead-intent click tracking (WhatsApp, email, demo/contact buttons) --
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (href.startsWith('https://wa.me/')) trackEvent('contact_whatsapp', { link_text: link.textContent.trim() });
+    else if (href.startsWith('mailto:')) trackEvent('contact_email');
+    else if (href.startsWith('contact.html')) trackEvent('cta_click', { link_text: link.textContent.trim(), page: location.pathname });
+    else if (href.includes('genzhours.com')) trackEvent('visit_genzhours');
+  });
+
   // ---- Theme -------------------------------------------------------------
   const themeToggle = document.getElementById('themeToggle');
   // Dark is the default; only a saved 'light' choice switches it off.
@@ -261,31 +298,85 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (event) => {
+    const submitBtn = document.getElementById('formSubmit');
+    const showStatus = (text, isError = false) => {
+      if (!formStatus) return;
+      formStatus.hidden = false;
+      formStatus.classList.toggle('is-error', isError);
+      formStatus.textContent = text;
+    };
+
+    contactForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const submission = new FormData(contactForm);
+
+      // Spam trap: real visitors never see or fill this field.
+      if (submission.get('_honey')) return;
+
       const name = submission.get('fullName')?.toString().trim() || 'Partner';
       const email = submission.get('email')?.toString().trim() || '';
       const phone = submission.get('phone')?.toString().trim() || 'Not provided';
       const service = submission.get('serviceInterest')?.toString() || 'Enterprise Solution';
       const message = submission.get('message')?.toString().trim() || 'Not provided';
       const subject = `GenzBPO inquiry: ${service}`;
-      const body = [
-        `Name: ${name}`,
-        `Work email: ${email}`,
-        `Phone / WhatsApp: ${phone}`,
-        `Service or product: ${service}`,
-        '',
-        'Project details:',
-        message
-      ].join('\r\n');
-      const mailtoUrl = `mailto:info@genzbpo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-      if (formStatus) {
-        formStatus.hidden = false;
-        formStatus.textContent = 'Your email app should open with this inquiry addressed to info@genzbpo.com. Review the message and press Send. If it does not open, email info@genzbpo.com directly.';
+      const openEmailApp = () => {
+        const body = [
+          `Name: ${name}`,
+          `Work email: ${email}`,
+          `Phone / WhatsApp: ${phone}`,
+          `Service or product: ${service}`,
+          '',
+          'Project details:',
+          message
+        ].join('\r\n');
+        window.location.href = `mailto:info@genzbpo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      };
+
+      if (!SITE_CONFIG.formEndpoint) {
+        showStatus('Your email app should open with this inquiry addressed to info@genzbpo.com. Review the message and press Send.');
+        openEmailApp();
+        return;
       }
-      window.location.href = mailtoUrl;
+
+      const originalLabel = submitBtn?.textContent;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending inquiry...';
+      }
+
+      try {
+        const response = await fetch(SITE_CONFIG.formEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            'Full name': name,
+            'Work email': email,
+            'Phone / WhatsApp': phone,
+            'Service or product': service,
+            'Project details': message,
+            'Sent from page': window.location.href,
+            _subject: subject,
+            _replyto: email,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || String(result.success) === 'false') throw new Error(result.message || `HTTP ${response.status}`);
+
+        contactForm.reset();
+        showStatus(`Thanks, ${name}. Your inquiry was sent to the GenzBPO team, and we'll reply to ${email}.`);
+        trackEvent('generate_lead', { service });
+      } catch {
+        showStatus('We couldn\'t send your inquiry from this page. Your email app will open with the message ready; press Send there, or email info@genzbpo.com directly.', true);
+        openEmailApp();
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        }
+      }
     });
   }
 });
