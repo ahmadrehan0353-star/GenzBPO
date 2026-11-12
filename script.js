@@ -7,11 +7,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ---- Theme -------------------------------------------------------------
   const themeToggle = document.getElementById('themeToggle');
-  let darkModeEnabled = false;
+  // Dark is the default; only a saved 'light' choice switches it off.
+  let darkModeEnabled = true;
   try {
-    darkModeEnabled = localStorage.getItem('genzbpo-theme') === 'dark';
+    darkModeEnabled = localStorage.getItem('genzbpo-theme') !== 'light';
   } catch {
-    darkModeEnabled = false;
+    darkModeEnabled = true;
   }
   document.body.classList.toggle('dark-mode', darkModeEnabled);
 
