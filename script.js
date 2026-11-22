@@ -120,10 +120,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- ROI calculator ----------------------------------------------------
-  const patientInput = document.getElementById('patientRange');
+  const rpmInput = document.getElementById('rpmRange');
+  const ccmInput = document.getElementById('ccmRange');
   const devInput = document.getElementById('devRange');
-  const patientValueEl = document.getElementById('patientVal');
+  const rpmValueEl = document.getElementById('rpmVal');
+  const ccmValueEl = document.getElementById('ccmVal');
   const devValueEl = document.getElementById('devVal');
+
+  // 2026 Medicare PFS, Florida (First Coast) Locality 99 – Rest of Florida,
+  // participating non-facility amounts effective 01/01/2026.
+  // Average monthly billing per patient (base 20-minute codes, no add-on minutes).
+  const FL_RATES = {
+    cpt99454: 50.00, // RPM device supply, 16+ days
+    cpt99457: 51.12, // RPM treatment management, first 20 min
+    cpt99490: 65.97  // CCM clinical staff, first 20 min
+  };
+  const RPM_PER_PATIENT = FL_RATES.cpt99454 + FL_RATES.cpt99457; // $101.12
+  const CCM_PER_PATIENT = FL_RATES.cpt99490;                     // $65.97
+  // Avg BPO / remote engineering & HR payroll savings ~$42,000 per FTE per year
+  const MONTHLY_SAVINGS_PER_FTE = 42000 / 12;                    // $3,500
+
+  const usd = (n) => '$' + Math.round(n).toLocaleString('en-US');
   const totalRoiEl = document.getElementById('totalRoiResult');
   const breakdownEl = document.getElementById('roiBreakdown');
 
@@ -135,29 +152,30 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function updateCalculator() {
-    if (!patientInput || !devInput) return;
-    const patients = parseInt(patientInput.value, 10);
+    if (!rpmInput || !ccmInput || !devInput) return;
+    const rpmPatients = parseInt(rpmInput.value, 10);
+    const ccmPatients = parseInt(ccmInput.value, 10);
     const devs = parseInt(devInput.value, 10);
 
-    patientValueEl.textContent = `${patients.toLocaleString()} Enrolled Patients`;
+    rpmValueEl.textContent = `${rpmPatients.toLocaleString('en-US')} RPM Patients`;
+    ccmValueEl.textContent = `${ccmPatients.toLocaleString('en-US')} CCM Patients`;
     devValueEl.textContent = `${devs} Remote Specialists`;
 
-    // Avg Medicare RPM + CCM revenue ~$118/patient/mo -> annual
-    const annualHealthcareRev = patients * 118 * 12;
-    // Avg annual BPO / remote engineering & HR payroll savings ~$42,000 per FTE
-    const annualTeamSavings = devs * 42000;
-    const combinedImpact = annualHealthcareRev + annualTeamSavings;
+    const monthlyRpm = rpmPatients * RPM_PER_PATIENT;
+    const monthlyCcm = ccmPatients * CCM_PER_PATIENT;
+    const monthlySavings = devs * MONTHLY_SAVINGS_PER_FTE;
+    const combinedImpact = monthlyRpm + monthlyCcm + monthlySavings;
 
-    totalRoiEl.textContent = '$' + combinedImpact.toLocaleString();
-    breakdownEl.textContent = `Includes ~$${annualHealthcareRev.toLocaleString()}/yr in RPM/CCM Medicare reimbursements + $${annualTeamSavings.toLocaleString()}/yr in remote staffing savings.`;
+    totalRoiEl.textContent = usd(combinedImpact);
+    breakdownEl.textContent = `Includes ~${usd(monthlyRpm)}/mo in RPM + ~${usd(monthlyCcm)}/mo in CCM Medicare reimbursements + ${usd(monthlySavings)}/mo in remote staffing savings.`;
 
-    paintFill(patientInput);
+    paintFill(rpmInput);
+    paintFill(ccmInput);
     paintFill(devInput);
   }
 
-  if (patientInput && devInput) {
-    patientInput.addEventListener('input', updateCalculator);
-    devInput.addEventListener('input', updateCalculator);
+  if (rpmInput && ccmInput && devInput) {
+    [rpmInput, ccmInput, devInput].forEach((el) => el.addEventListener('input', updateCalculator));
     updateCalculator();
   }
 
