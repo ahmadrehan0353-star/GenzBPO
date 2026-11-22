@@ -322,15 +322,23 @@
         <div class="calculator-box">
           <div class="calc-inputs">
             <span class="kicker">Interactive Impact Estimator</span>
-            <h2 id="calcTitle">Calculate Your Annual Revenue &amp; Cost Savings</h2>
-            <p>Slide to estimate your clinic's annual Medicare RPM/CCM reimbursement potential alongside your remote engineering and HR staffing savings.</p>
+            <h2 id="calcTitle">Calculate Your Monthly Revenue &amp; Cost Savings</h2>
+            <p>Slide to estimate your clinic's monthly Medicare RPM and CCM reimbursement at 2026 Florida rates, alongside your monthly remote engineering and HR staffing savings.</p>
 
             <div class="range-group">
               <div class="range-label">
-                <label for="patientRange">RPM / CCM Enrolled Patients</label>
-                <output id="patientVal" class="range-value" for="patientRange">250 Enrolled Patients</output>
+                <label for="rpmRange">RPM Enrolled Patients</label>
+                <output id="rpmVal" class="range-value" for="rpmRange">150 RPM Patients</output>
               </div>
-              <input type="range" id="patientRange" class="range-input" min="0" max="2000" step="50" value="250" />
+              <input type="range" id="rpmRange" class="range-input" min="0" max="2000" step="25" value="150" />
+            </div>
+
+            <div class="range-group">
+              <div class="range-label">
+                <label for="ccmRange">CCM Enrolled Patients</label>
+                <output id="ccmVal" class="range-value" for="ccmRange">100 CCM Patients</output>
+              </div>
+              <input type="range" id="ccmRange" class="range-input" min="0" max="2000" step="25" value="100" />
             </div>
 
             <div class="range-group">
@@ -343,10 +351,11 @@
           </div>
 
           <div class="calc-result" aria-live="polite">
-            <span class="calc-result-label">Estimated Annual Net Impact</span>
-            <div class="calc-amount" id="totalRoiResult">$564,000</div>
-            <p class="calc-breakdown" id="roiBreakdown">Includes ~$354,000/yr in RPM/CCM Medicare reimbursements + $210,000/yr in remote staffing savings.</p>
+            <span class="calc-result-label">Estimated Monthly Net Impact</span>
+            <div class="calc-amount" id="totalRoiResult">$39,265</div>
+            <p class="calc-breakdown" id="roiBreakdown">Includes ~$15,168/mo in RPM + ~$6,597/mo in CCM Medicare reimbursements + $17,500/mo in remote staffing savings.</p>
             <a href="contact.html" class="btn btn-light btn-block">Lock In Your Custom Proposal</a>
+            <p class="calc-note">Based on the 2026 Medicare Physician Fee Schedule for Florida (First Coast, Locality 99 – Rest of Florida, non-facility). Average monthly billing per patient, not maximum minutes. RPM: 99454 ($50.00) + 99457 first 20 min ($51.12) = $101.12. CCM: 99490 first 20 min ($65.97). Add-on minutes (99458, 99439) and one-time setup (99453) are excluded. Patient coinsurance is included in these amounts. Rates in Fort Lauderdale and Miami-Dade are slightly higher.</p>
           </div>
         </div>
       </div>
